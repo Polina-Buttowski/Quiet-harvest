@@ -1,5 +1,5 @@
-@import url('fonts.css');
 @import url('reset.css');
+@import url('fonts.css');
 * {
     box-sizing: border-box;
 }
@@ -46,7 +46,6 @@ body {
     text-align: center;
     z-index: 2;
     p {
-    font-weight: bold;
     font-size: 70px;
     color: #452E1E;
 }
@@ -99,24 +98,6 @@ body {
     object-fit: contain;
 }
 
-.leaf-area {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    overflow: hidden;
-    z-index: 1;
-}
-
-.leaf-particle {
-    position: absolute;
-    pointer-events: none;
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
 .drinkChoice{
     display: flex;
     flex-direction: row;
@@ -151,6 +132,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
     p{
         color: #ECE1C8;
     }
@@ -162,7 +144,6 @@ body {
     position: relative;
     width: 100%;
     height: 100%;
-    cursor: default;
 }
 
 .movingPic {
@@ -181,7 +162,6 @@ body {
     width: 500px;
     height: auto;
     display: block;
-    cursor: default;
     pointer-events: none;
 }
 
@@ -220,7 +200,7 @@ body {
 
 /* Анимации */
 @keyframes blink {
-    0%, 100% { opacity: 1; }
+    0%{ opacity: 1; }
     50% { opacity: 0; }
 }
 
@@ -293,7 +273,7 @@ body {
         position: relative;
         width: 100%;
         min-height: 100vh;
-        padding: 20px 0;
+        padding: 20px 0px;
     }
     
     .nonmoving {
@@ -309,7 +289,6 @@ body {
         width: 252px;
         font-size: 11px;
         z-index: 2;
-        white-space: normal;
         margin: 0;
         padding: 15px;
         top: 50%;
@@ -319,71 +298,11 @@ body {
     
     .movingPic {
         position: absolute;
-        width: 180px !important;
+        width: 200px !important;
         height: auto;
     }
-    .movingPic[src*="movingPic1"] {
-        width: 200px !important;
 
-    }
-    
-    .movingPic[src*="movingPic2"] {
-        width: 200px !important;
-
-    }
-    
-    .movingPic[src*="movingPic4"] {
-        width: 200px !important;
-
-    }
-    
-    .movingPic[src*="movingPic5"] {
-        width: 200px !important;
-
-    }
-    
-    .movingPic[src*="movingPic6"] {
-        width: 200px !important;
-    }
-    
-    .movingPic[src*="movingPic7"] {
-        width: 160px !important;
-    }
 }
 
-@media(max-width: 480px) {
-    
-    .title p {
-        font-size: 30px;
-    }
-    
-    .rectangle {
-        width: 65px;
-        height: 60px;
-    }
-    
-    .drinkChoice,
-    .doppingChoice {
-        gap: 10px;
-    }
-    
-    .main-drink-img {
-        width: 150px;
-    }
-    
-    .nonmoving {
-        width: 280px;
-    }
-    
-    .textOnImg p {
-        width: 180px;
-        font-size: 10px;
-        padding: 12px;
-    }
-    
-    .movingPic {
-        width: 140px !important;
-    }
-}
 
 
