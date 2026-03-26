@@ -1,0 +1,389 @@
+@import url('fonts.css');
+@import url('reset.css');
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ECE1C8;
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+#firstScreen {
+    position: relative;
+    width: 100%;
+    height: 110vh;
+}
+
+#SecondScreen {
+    font-family: 'Monospace';
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+}
+
+#thirdScreen{
+    font-family: 'Monospace';
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    z-index: 1; 
+    overflow: hidden;
+    img{
+        background-color: none;
+        fill: none;
+    }
+}
+
+.title {
+    font-family: 'Alcotton' !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+    p {
+    font-weight: bold;
+    font-size: 70px;
+    color: #452E1E;
+}
+}
+
+.typingText {
+    font-family: 'Monospace';
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    z-index: 2;
+    max-width: 500px;
+}
+
+#typingTextElement {
+    font-size: 16px;
+    color: #452E1E;
+    display: inline;
+}
+
+#typingTextElement::after {
+    content: '|';
+    display: inline;
+    animation: blink 1s infinite;
+}
+
+.line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #9E9268;
+    overflow: hidden;
+    height: 80px;
+}
+
+.imagesLine {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    align-items: center;
+    width: auto;
+    flex-shrink: 0;
+}
+
+.imagesLine img {
+    flex-shrink: 0; 
+    width: auto;
+    height: 50px;
+    object-fit: contain;
+}
+
+.leaf-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.leaf-particle {
+    position: absolute;
+    pointer-events: none;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.drinkChoice{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.doppingChoice{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;   
+}
+
+.choice{
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+}
+
+.rectangle{
+    overflow: hidden;
+    border: #452E1E 3px solid;
+    border-radius: 25%;
+    width: 100px;
+    height: 90px;
+}
+
+.button{
+    border-radius: 24px;
+    background-color: #452E1E;
+    width: 260px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    p{
+        color: #ECE1C8;
+    }
+}
+
+
+
+.movingArea {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: default;
+}
+
+.movingPic {
+    position: absolute;
+    width: 500px;
+    transition: box-shadow 0.1s ease;
+    user-select: none;
+    z-index: 10;
+}
+
+.movingPic:active {
+    filter: drop-shadow(0 8px 15px rgb(36, 36, 36));
+}
+
+.nonmoving {
+    width: 500px;
+    height: auto;
+    display: block;
+    cursor: default;
+    pointer-events: none;
+}
+
+.rectangle {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.rectangle:hover {
+    transform: scale(1.05);
+}
+
+.rectangle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.textOnImg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p {
+    position: absolute;
+    color: #452E1E;
+    width: 330px;
+    font-size: 14px;
+    z-index: 2;
+    white-space: normal;
+    padding: 15px;
+}
+}
+
+
+
+
+/* Анимации */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@keyframes shake2{
+    0% {
+        transform: rotate(-15deg); 
+    }
+
+    100% {
+        transform: rotate(15deg); 
+    }
+}
+
+@keyframes shake1{
+    0% {
+        transform: rotate(15deg); 
+    }
+
+    100% {
+        transform: rotate(-15deg); 
+    }    
+}
+
+
+/*АДАПТИВы*/
+@media(max-width: 725px) {
+    
+    .title p {
+        font-size: 40px;
+    }
+    #SecondScreen {
+        height: auto;
+        min-height: 100vh;
+    }
+    
+    .choice {
+        flex-direction: column;
+        gap: 30px;
+        width: 100%;
+        align-items: center;
+    }
+    
+    .drinkChoice,
+    .doppingChoice {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    
+    .rectangle {
+        width: 80px;
+        height: 72px;
+    }
+    
+    .main-drink-img {
+        width: 200px;
+        height: auto;
+    }
+    
+    #thirdScreen {
+        height: auto;
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+    
+    .movingArea {
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+        padding: 20px 0;
+    }
+    
+    .nonmoving {
+        width: 377px;
+        height: auto;
+        display: block;
+        pointer-events: none;
+    }
+    
+    .textOnImg p {
+        position: absolute;
+        color: #452E1E;
+        width: 252px;
+        font-size: 11px;
+        z-index: 2;
+        white-space: normal;
+        margin: 0;
+        padding: 15px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .movingPic {
+        position: absolute;
+        width: 180px !important;
+        height: auto;
+    }
+    .movingPic[src*="movingPic1"] {
+        width: 200px !important;
+
+    }
+    
+    .movingPic[src*="movingPic2"] {
+        width: 200px !important;
+
+    }
+    
+    .movingPic[src*="movingPic4"] {
+        width: 200px !important;
+
+    }
+    
+    .movingPic[src*="movingPic5"] {
+        width: 200px !important;
+
+    }
+    
+    .movingPic[src*="movingPic6"] {
+        width: 200px !important;
+    }
+    
+    .movingPic[src*="movingPic7"] {
+        width: 160px !important;
+    }
+}
+
+@media(max-width: 480px) {
+    
+    .title p {
+        font-size: 30px;
+    }
+    
+    .rectangle {
+        width: 65px;
+        height: 60px;
+    }
+    
+    .drinkChoice,
+    .doppingChoice {
+        gap: 10px;
+    }
+    
+    .main-drink-img {
+        width: 150px;
+    }
+    
+    .nonmoving {
+        width: 280px;
+    }
+    
+    .textOnImg p {
+        width: 180px;
+        font-size: 10px;
+        padding: 12px;
+    }
+    
+    .movingPic {
+        width: 140px !important;
+    }
+}
+
+

@@ -1,5 +1,13 @@
-.test{
-    height: 400px;
-    width: 400px;
-    color: yellowgreen;
+@font-face {
+    font-family: 'Monospace';
+    src: url('../fonts/nk57-monospace-no-rg.ttf') format('truetype');
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Alcotton';
+    src: url('../fonts/alcotton.ttf') format('truetype');
+    font-style: normal;
+    font-display: swap;
 }
